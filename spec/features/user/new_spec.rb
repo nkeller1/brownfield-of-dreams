@@ -23,7 +23,6 @@ describe 'A new user can be created' do
 
     click_on "Create Account"
 
-    expect(current_path).to eq()
-
+    expect(current_path).to eq('/dashboard')
   end
 end

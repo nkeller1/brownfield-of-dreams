@@ -5,3 +5,9 @@ env:
   - DB=sqlite
   - DB=mysql
   - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
+services:
+  - postgresql

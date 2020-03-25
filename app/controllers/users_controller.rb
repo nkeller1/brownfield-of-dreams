@@ -2,7 +2,10 @@ class UsersController < ApplicationController
   def show
     user = User.find(session[:user_id])
     token = user.token
-    @repos = Faraday.get("https://api.github.com/user/repos?access_token=#{token}")
+    response = Faraday.get("https://api.github.com/user/repos?access_token=#{token}")
+    @repos = JSON.parse(response.body, symbolize_names: true)
+
+    
   end
 
   def new

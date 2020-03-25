@@ -30,6 +30,7 @@ RSpec.describe 'User dashboard' do
     expect(current_path).to eq(dashboard_path)
 
     within '#github' do
+      save_and_open_page
       expect(page).to have_link()
       expect(page).to have_link()
       expect(page).to have_link()

@@ -13,4 +13,8 @@
 </section>
 
 <section id='github'>
+<h2>Github Repositories</h2>
+  <% @repos[0..4].each do |repo| %>
+    <%= link_to repo[:name], repo[:html_url] %>
+  <% end %>
 </section>

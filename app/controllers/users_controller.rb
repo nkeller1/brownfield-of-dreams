@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def show
+    user = User.find(session[:user_id])
+    token = user.token
+    @repos = Faraday.get("https://api.github.com/user/repos?access_token=#{token}")
   end
 
   def new

@@ -25,4 +25,21 @@ describe "An Admin can edit a tutorial" do
       expect(page).to have_content("How to tie your shoes.")
     end
   end
+
+  scenario 'by trying to add a bad video', :js, :vcr => vcr_options do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    visit edit_admin_tutorial_path(tutorial)
+
+    click_on "Add Video"
+
+    within('#new-video-form') do
+      fill_in 'video_title', with: "How to tie your shoes."
+      fill_in 'video_description', with: ""
+      fill_in 'video_video_id', with: "aaaaa"
+      click_on "Create Video"
+    end
+
+    expect(page).to have_content('Unable to create video.')
+  end
 end

@@ -113,4 +113,24 @@ RSpec.describe 'User dashboard' do
       expect(page).to have_link('nkeller1')
     end
   end
+  it 'can see a followers section with a different user', :js, :vcr => vcr_options do
+    visit '/'
+
+    click_on 'Sign In'
+
+    expect(current_path).to eq(login_path)
+
+    fill_in 'session[email]', with: @user_2.email
+    fill_in 'session[password]', with: @user_2.password
+
+    click_on 'Log In'
+
+    expect(current_path).to eq(dashboard_path)
+
+    within '#followers' do
+      expect(page).to have_content('Followers')
+      expect(page).to have_link('PaulDebevec')
+      expect(page).to have_link('alerrian')
+    end
+  end
 end

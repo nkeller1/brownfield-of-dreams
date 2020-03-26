@@ -9,7 +9,7 @@ RSpec.describe 'User dashboard' do
       first_name: 'Steve',
       last_name: 'Anderson',
       password: 'pass_1',
-      token: ENV['GH_STEVE_TOKEN'],
+      token: Figaro.env.gh_steve_token,
       username: 'alerrian',
       role: :default
     )
@@ -18,7 +18,7 @@ RSpec.describe 'User dashboard' do
       first_name: 'Nathan',
       last_name: 'Keller',
       password: 'pass_1',
-      token: ENV['GH_NATHAN_TOKEN'],
+      token: Figaro.env.gh_nathan_token,
       username: 'nkeller1',
       role: :default
     )

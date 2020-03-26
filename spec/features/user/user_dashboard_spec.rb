@@ -70,6 +70,7 @@ RSpec.describe 'User dashboard' do
       expect(page).to have_link('futbol')
       expect(page).to have_link('battleship')
       expect(page).to have_link('1911Enigma')
+      # expect(page).to have_css('.repo', count: 5)
     end
   end
 
@@ -182,5 +183,33 @@ RSpec.describe 'User dashboard' do
       expect(page).to have_link('alerrian')
       expect(page).to have_link('BrianZanti')
     end
+  end
+
+  it "oauth, connecting to github", :js, :vcr => vcr_options do
+
+    visit '/'
+
+    click_on 'Sign In'
+
+    expect(current_path).to eq(login_path)
+
+    fill_in 'session[email]', with: @user_3.email
+    fill_in 'session[password]', with: @user_3.password
+
+    click_on 'Log In'
+
+    expect(page).not_to have_content("Github")
+
+    OmniAuth.config.test_mode = true
+
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+    :provider => 'github',
+    :uid => '123545',
+    :credentials => {:token => ENV['GH_NATHAN_TOKEN'] }
+    })
+
+    click_button "Connect to Github"
+
+    expect(page).to have_content("Github")
   end
 end

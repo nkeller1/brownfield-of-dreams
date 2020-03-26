@@ -1,38 +1,40 @@
 <section class="dashboard-main">
   <h1> <%= current_user.first_name %>'s Dashboard </h1>
-
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
   <h3>Account Details</h3>
   <ul>
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
-
-  <section>
-    <h1>Bookmarked Segments</h1>
-  </section>
 </section>
+
+<%= button_to "Connect to Github", "/auth/github" %>
 
 <% if current_user.token != nil %>
   <h2> Github </h2>
     <section id='repos'>
       <h3> Repositories </h3>
       <% current_user.gh_repos.each do |repo| %>
-        <%= link_to repo.name, repo.html_url %>
+        <%= link_to repo.name, repo.html_url %> <br>
       <% end %>
     </section>
 
   <section id='followers'>
     <h3> Followers </h3>
     <% current_user.gh_followers.each do |follower| %>
-      <%= link_to follower.login, follower.html_url %>
+      <%= link_to follower.login, follower.html_url %> <br>
     <% end %>
   </section>
 
   <section id='following'>
     <h3> Following </h3>
     <% current_user.gh_following.each do |member| %>
-      <%= link_to member.login, member.html_url %>
+      <%= link_to member.login, member.html_url %> <br>
     <% end %>
   </section>
 <% end %>
+
+
+<section>
+  <h1>Bookmarked Segments</h1>
+</section>

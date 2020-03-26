@@ -16,7 +16,6 @@ VCR.configure do |config|
   config.filter_sensitive_data("<YOUTUBE_API_KEY>") { ENV['YOUTUBE_API_KEY'] }
 end
 
-
 ActiveRecord::Migration.maintain_test_schema!
 
 Capybara.register_driver :selenium do |app|

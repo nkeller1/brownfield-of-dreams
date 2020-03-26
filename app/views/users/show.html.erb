@@ -1,17 +1,14 @@
 <section class="dashboard-main">
   <h1> <%= current_user.first_name %>'s Dashboard </h1>
-
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
   <h3>Account Details</h3>
   <ul>
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
-
-  <section>
-    <h1>Bookmarked Segments</h1>
-  </section>
 </section>
+
+<%= button_to "Connect to Github", "/auth/github" %>
 
 <% if current_user.token != nil %>
   <h2> Github </h2>
@@ -36,3 +33,8 @@
     <% end %>
   </section>
 <% end %>
+
+
+<section>
+  <h1>Bookmarked Segments</h1>
+</section>

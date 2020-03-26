@@ -2,6 +2,12 @@ class SessionsController < ApplicationController
   def new
     @user ||= User.new
   end
+  # 
+  # def oauth
+  #   current_user.update(token: request.env['omniauth.auth']['credentials']['token'])
+  #
+  #   redirect_to dashboard_path, notice: "Connected to Github!"
+  # end
 
   def create
     user = User.find_by(email: params[:session][:email])

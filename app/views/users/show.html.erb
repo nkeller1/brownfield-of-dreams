@@ -28,4 +28,11 @@
       <%= link_to follower.login, follower.html_url %>
     <% end %>
   </section>
+
+  <section id='following'>
+    <h3> Following </h3>
+    <% current_user.gh_following.each do |member| %>
+      <%= link_to member.login, member.html_url %>
+    <% end %>
+  </section>
 <% end %>

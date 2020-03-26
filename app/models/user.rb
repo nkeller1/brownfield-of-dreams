@@ -23,4 +23,11 @@ class User < ApplicationRecord
       Follower.new(follower)
     end
   end
+
+  def gh_following
+    gh_search = GithubSearch.new(self.token)
+    gh_search.following.map do |member|
+      Following.new(member)
+    end
+  end
 end

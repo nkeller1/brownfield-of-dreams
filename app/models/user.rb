@@ -16,4 +16,18 @@ class User < ApplicationRecord
       Repo.new(repo)
     end
   end
+
+  def gh_followers
+    gh_search = GithubSearch.new(self.token)
+    gh_search.followers.map do |follower|
+      Follower.new(follower)
+    end
+  end
+
+  def gh_following
+    gh_search = GithubSearch.new(self.token)
+    gh_search.following.map do |member|
+      Following.new(member)
+    end
+  end
 end

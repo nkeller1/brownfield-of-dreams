@@ -15,21 +15,21 @@
     <section id='repos'>
       <h3> Repositories </h3>
       <% current_user.gh_repos.each do |repo| %>
-        <%= link_to repo.name, repo.html_url %>
+        <%= link_to repo.name, repo.html_url %> <br>
       <% end %>
     </section>
 
   <section id='followers'>
     <h3> Followers </h3>
     <% current_user.gh_followers.each do |follower| %>
-      <%= link_to follower.login, follower.html_url %>
+      <%= link_to follower.login, follower.html_url %> <br>
     <% end %>
   </section>
 
   <section id='following'>
     <h3> Following </h3>
     <% current_user.gh_following.each do |member| %>
-      <%= link_to member.login, member.html_url %>
+      <%= link_to member.login, member.html_url %> <br>
     <% end %>
   </section>
 <% end %>

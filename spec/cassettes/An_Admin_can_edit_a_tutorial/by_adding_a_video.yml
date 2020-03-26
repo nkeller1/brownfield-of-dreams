@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.12.2
+      - Faraday v0.17.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,13 +19,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Thu, 12 Mar 2020 18:23:54 GMT
+      - Thu, 26 Mar 2020 02:47:13 GMT
       Date:
-      - Thu, 12 Mar 2020 18:23:54 GMT
+      - Thu, 26 Mar 2020 02:47:13 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"SJZWTG6xR0eGuCOh2bX6w3s4F94/7RPlr-dHgPNrsS5EquixnP1_4tk"'
+      - '"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/xBzmwvS87TfOV1IETX9xGWZN7dY"'
       Vary:
       - Origin
       - X-Origin
@@ -44,7 +44,7 @@ http_interactions:
       Alt-Svc:
       - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
         ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000
+        ma=2592000,h3-T050=":443"; ma=2592000
       Transfer-Encoding:
       - chunked
     body:
@@ -52,7 +52,7 @@ http_interactions:
       string: |
         {
          "kind": "youtube#videoListResponse",
-         "etag": "\"SJZWTG6xR0eGuCOh2bX6w3s4F94/7RPlr-dHgPNrsS5EquixnP1_4tk\"",
+         "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/xBzmwvS87TfOV1IETX9xGWZN7dY\"",
          "pageInfo": {
           "totalResults": 1,
           "resultsPerPage": 1
@@ -60,7 +60,7 @@ http_interactions:
          "items": [
           {
            "kind": "youtube#video",
-           "etag": "\"SJZWTG6xR0eGuCOh2bX6w3s4F94/KMl5IBD1SpS9UKX51neUpDHAQu0\"",
+           "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/2XwE-yDz8-kkqdotxkh9ulQPPVs\"",
            "id": "J7ikFUlkP_k",
            "snippet": {
             "publishedAt": "2018-07-23T20:59:59.000Z",
@@ -111,7 +111,7 @@ http_interactions:
             "projection": "rectangular"
            },
            "statistics": {
-            "viewCount": "259",
+            "viewCount": "262",
             "likeCount": "2",
             "dislikeCount": "0",
             "favoriteCount": "0",
@@ -121,71 +121,5 @@ http_interactions:
          ]
         }
     http_version: null
-  recorded_at: Thu, 12 Mar 2020 18:23:54 GMT
-- request:
-    method: get
-    uri: https://chromedriver.storage.googleapis.com/LATEST_RELEASE_80.0.3987
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - chromedriver.storage.googleapis.com
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Guploader-Uploadid:
-      - AEnB2UqPgYsGlqJZpnZkzO3VAVmbUIbP1l7PMUqVcFt7_6jYGbdG6huvWU3L8XruameQLcv7S_fI1qGaqNgNNjymCVwyTf2ERg
-      Expires:
-      - Wed, 25 Mar 2020 00:40:19 GMT
-      Date:
-      - Tue, 24 Mar 2020 23:40:19 GMT
-      Last-Modified:
-      - Thu, 13 Feb 2020 19:33:45 GMT
-      Etag:
-      - '"492ef7f4a53ab59e654c8ed8f7fb63ca"'
-      X-Goog-Generation:
-      - '1581622425572055'
-      X-Goog-Metageneration:
-      - '1'
-      X-Goog-Stored-Content-Encoding:
-      - identity
-      X-Goog-Stored-Content-Length:
-      - '13'
-      Content-Type:
-      - text/plain
-      Content-Language:
-      - en
-      X-Goog-Hash:
-      - crc32c=wvNAZQ==
-      - md5=SS739KU6tZ5lTI7Y9/tjyg==
-      X-Goog-Storage-Class:
-      - STANDARD
-      Accept-Ranges:
-      - bytes
-      Content-Length:
-      - '13'
-      Server:
-      - UploadServer
-      Cache-Control:
-      - public, max-age=3600
-      Age:
-      - '1354'
-      Alt-Svc:
-      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,h3-T050=":443"; ma=2592000
-    body:
-      encoding: UTF-8
-      string: 80.0.3987.106
-    http_version: null
-  recorded_at: Wed, 25 Mar 2020 00:02:53 GMT
+  recorded_at: Thu, 26 Mar 2020 02:47:13 GMT
 recorded_with: VCR 5.1.0

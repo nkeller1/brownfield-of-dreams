@@ -7,7 +7,17 @@
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
+  
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
+</section>
+
+<section id='github'>
+  <% if current_user.token != nil %>
+    <h2>Github Repositories</h2>
+      <% current_user.gh_repos.each do |repo| %>
+        <%= link_to repo.name, repo.html_url %>
+      <% end %>
+  <% end %>
 </section>

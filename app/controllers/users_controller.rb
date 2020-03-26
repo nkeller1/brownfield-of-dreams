@@ -1,11 +1,5 @@
 class UsersController < ApplicationController
   def show
-    user = User.find(session[:user_id])
-    token = user.token
-    response = Faraday.get("https://api.github.com/user/repos?access_token=#{token}")
-    @repos = JSON.parse(response.body, symbolize_names: true)
-
-    
   end
 
   def new
@@ -28,5 +22,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :password)
   end
-
 end

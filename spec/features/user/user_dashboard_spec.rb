@@ -30,12 +30,11 @@ RSpec.describe 'User dashboard' do
     expect(current_path).to eq(dashboard_path)
 
     within '#github' do
-      save_and_open_page
-      expect(page).to have_link()
-      expect(page).to have_link()
-      expect(page).to have_link()
-      expect(page).to have_link()
-      expect(page).to have_link()
+      expect(page).to have_link('activerecord-obstacle-course')
+      expect(page).to have_link('adopt_dont_shop')
+      expect(page).to have_link('adopt_dont_shop_paired')
+      expect(page).to have_link('algorithm_sort')
+      expect(page).to have_link('b2-mid-mod')
     end
   end
 end

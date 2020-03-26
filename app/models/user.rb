@@ -9,4 +9,11 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :password, confirmation: { presence: true, case_sensitive: true }
+
+  def gh_repos
+    gh_search = GithubSearch.new(self.token)
+    gh_search.repos[0..4].map do |repo|
+      Repo.new(repo)
+    end
+  end
 end

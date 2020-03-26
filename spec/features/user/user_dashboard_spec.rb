@@ -90,6 +90,8 @@ RSpec.describe 'User dashboard' do
 
     expect(page).to_not have_content('Github')
     expect(page).to_not have_content('Repositories')
+    expect(page).to_not have_content('Followers')
+    expect(page).to_not have_content('Following')
   end
 
   it 'can see a repos section with github followers', :js, :vcr => vcr_options do
@@ -113,6 +115,7 @@ RSpec.describe 'User dashboard' do
       expect(page).to have_link('nkeller1')
     end
   end
+
   it 'can see a followers section with a different user', :js, :vcr => vcr_options do
     visit '/'
 
@@ -131,6 +134,53 @@ RSpec.describe 'User dashboard' do
       expect(page).to have_content('Followers')
       expect(page).to have_link('PaulDebevec')
       expect(page).to have_link('alerrian')
+    end
+  end
+
+
+  it 'can see a section for github following', :js, :vcr => vcr_options do
+    visit '/'
+
+    click_on 'Sign In'
+
+    expect(current_path).to eq(login_path)
+
+    fill_in 'session[email]', with: @user_1.email
+    fill_in 'session[password]', with: @user_1.password
+
+    click_on 'Log In'
+
+    expect(current_path).to eq(dashboard_path)
+
+    within '#following' do
+      expect(page).to have_content('Following')
+      expect(page).to have_link('rcallen89')
+      expect(page).to have_link('dionew1')
+      expect(page).to have_link('nkeller1')
+      expect(page).to have_link('BrianZanti')
+      expect(page).to have_link('iEv0lv3')
+    end
+  end
+
+  it 'can see a following section with a different user', :js, :vcr => vcr_options do
+    visit '/'
+
+    click_on 'Sign In'
+
+    expect(current_path).to eq(login_path)
+
+    fill_in 'session[email]', with: @user_2.email
+    fill_in 'session[password]', with: @user_2.password
+
+    click_on 'Log In'
+
+    expect(current_path).to eq(dashboard_path)
+
+    within '#following' do
+      expect(page).to have_content('Following')
+      expect(page).to have_link('PaulDebevec')
+      expect(page).to have_link('alerrian')
+      expect(page).to have_link('BrianZanti')
     end
   end
 end

@@ -14,10 +14,14 @@
 </section>
 
 <% if current_user.token != nil %>
-  <section id='github'>
-    <h2>Github Repositories</h2>
-    <% current_user.gh_repos.each do |repo| %>
-      <%= link_to repo.name, repo.html_url %>
-    <% end %>
-  </section>
+    <h2> Github </h2>
+      <section id='repos'>
+        <h3> Repositories </h3>
+        <% current_user.gh_repos.each do |repo| %>
+          <%= link_to repo.name, repo.html_url %>
+        <% end %>
+      </section>
+  
+    <h3> Followers </h3>
+
 <% end %>

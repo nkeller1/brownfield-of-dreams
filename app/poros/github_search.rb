@@ -9,4 +9,9 @@ class GithubSearch
     response = Faraday.get("https://api.github.com/user/repos?access_token=#{@token}")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def followers
+    response = Faraday.get("https://api.github.com/user/followers?access_token=#{@token}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

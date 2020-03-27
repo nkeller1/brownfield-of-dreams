@@ -1,9 +1,8 @@
 class UserMailer < ApplicationMailer
-  default :from => 'no_reply@admin.com'
+  default from: 'no_reply@email.com'
 
   def registration_confirmation(user)
     @user = user
-    require 'pry'; binding.pry
-    mail(:to => "#{@user.first_name} <#{@user.email}, :subject => 'Registration Confirmation for Dirtfield of Dreams'")
+    mail(to: "#{@user.first_name} <#{@user.email}>", subject: 'Registration Confirmation for Dirtfield of Dreams')
   end
 end

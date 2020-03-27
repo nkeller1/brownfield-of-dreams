@@ -1,6 +1,5 @@
 Hello, <%= @user.first_name %>
 
-Thank you for registering with Dirtfield of Dreams! Click the following URL to finish registration.
+Visit here to activate your account: 
 
 <%= link_to  "Confirm", confirm_email_url(@user.confirm_token, host: 'http://localhost:3000') %>
-

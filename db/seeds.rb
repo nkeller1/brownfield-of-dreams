@@ -116,5 +116,3 @@ m3_tutorial.videos.create!({
 })
 
 User.create!(email: 'admin@example.com', first_name: 'Bossy', last_name: 'McBosserton', password:  "password", role: :admin)
-User.create!(email: 'steven.a.anderson2012@gmail.com', first_name: 'Steve', last_name: 'Anderson', password: 'pass_1', token: ENV['GH_STEVE_TOKEN'], username: 'alerrian', role: :default)
-User.create!(email: 'keller.nathan@gmail.com', first_name: 'Nathan', last_name: 'Keller', password: 'pass_1', token: ENV['GH_NATHAN_TOKEN'], username: 'nkeller1', role: :default)

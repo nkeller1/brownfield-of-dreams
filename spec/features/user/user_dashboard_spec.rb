@@ -207,4 +207,38 @@ RSpec.describe 'User dashboard' do
 
     expect(page).to have_content("Github")
   end
+
+  it "see that the account is awaiting email confirmation before e mail confirmation", :js, :vcr => vcr_options do
+
+    user = create(:user, email_confirmed: false)
+
+    visit '/'
+
+    click_on 'Sign In'
+
+    fill_in 'session[email]', with: user.email
+    fill_in 'session[password]', with: user.password
+
+    click_on 'Log In'
+
+    expect(user.email_confirmed).to eq(false)
+    expect(page).to have_content("Status: Awaiting E-mail confirmation")
+  end
+
+  it "see that the account is active after a user has confirmed thier e mail", :js, :vcr => vcr_options do
+
+    user = create(:user, email_confirmed: true)
+
+    visit '/'
+
+    click_on 'Sign In'
+
+    fill_in 'session[email]', with: user.email
+    fill_in 'session[password]', with: user.password
+
+    click_on 'Log In'
+
+    expect(user.email_confirmed).to eq(true)
+    expect(page).to have_content("Status: Active")
+  end
 end

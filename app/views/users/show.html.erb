@@ -15,7 +15,9 @@
     <section id='repos'>
       <h3> Repositories </h3>
       <% current_user.gh_repos.each do |repo| %>
+      <section class='repo'>
         <%= link_to repo.name, repo.html_url %> <br>
+      </section>
       <% end %>
     </section>
 

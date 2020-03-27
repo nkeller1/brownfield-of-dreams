@@ -20,14 +20,14 @@ class User < ApplicationRecord
   def gh_followers
     gh_search = GithubSearch.new(self.token)
     gh_search.followers.map do |follower|
-      Follower.new(follower)
+      Githubmember.new(follower)
     end
   end
 
   def gh_following
     gh_search = GithubSearch.new(self.token)
     gh_search.following.map do |member|
-      Following.new(member)
+      Githubmember.new(member)
     end
   end
 end

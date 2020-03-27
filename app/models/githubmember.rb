@@ -1,4 +1,4 @@
-class Following
+class Githubmember
   attr_reader :login,
               :html_url
 

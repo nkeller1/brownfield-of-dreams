@@ -65,12 +65,7 @@ RSpec.describe 'User dashboard' do
     expect(current_path).to eq(dashboard_path)
 
     within '#repos' do
-      expect(page).to have_link('monster_shop_1911')
-      expect(page).to have_link('paired_pet_shop')
-      expect(page).to have_link('futbol')
-      expect(page).to have_link('battleship')
-      expect(page).to have_link('1911Enigma')
-      # expect(page).to have_css('.repo', count: 5)
+      expect(page).to have_css('.repo', count: 5)
     end
   end
 

@@ -220,4 +220,70 @@ http_interactions:
       string: '[{"login":"BrianZanti","id":8962411,"node_id":"MDQ6VXNlcjg5NjI0MTE=","avatar_url":"https://avatars1.githubusercontent.com/u/8962411?v=4","gravatar_id":"","url":"https://api.github.com/users/BrianZanti","html_url":"https://github.com/BrianZanti","followers_url":"https://api.github.com/users/BrianZanti/followers","following_url":"https://api.github.com/users/BrianZanti/following{/other_user}","gists_url":"https://api.github.com/users/BrianZanti/gists{/gist_id}","starred_url":"https://api.github.com/users/BrianZanti/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/BrianZanti/subscriptions","organizations_url":"https://api.github.com/users/BrianZanti/orgs","repos_url":"https://api.github.com/users/BrianZanti/repos","events_url":"https://api.github.com/users/BrianZanti/events{/privacy}","received_events_url":"https://api.github.com/users/BrianZanti/received_events","type":"User","site_admin":false},{"login":"iEv0lv3","id":10391857,"node_id":"MDQ6VXNlcjEwMzkxODU3","avatar_url":"https://avatars1.githubusercontent.com/u/10391857?v=4","gravatar_id":"","url":"https://api.github.com/users/iEv0lv3","html_url":"https://github.com/iEv0lv3","followers_url":"https://api.github.com/users/iEv0lv3/followers","following_url":"https://api.github.com/users/iEv0lv3/following{/other_user}","gists_url":"https://api.github.com/users/iEv0lv3/gists{/gist_id}","starred_url":"https://api.github.com/users/iEv0lv3/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/iEv0lv3/subscriptions","organizations_url":"https://api.github.com/users/iEv0lv3/orgs","repos_url":"https://api.github.com/users/iEv0lv3/repos","events_url":"https://api.github.com/users/iEv0lv3/events{/privacy}","received_events_url":"https://api.github.com/users/iEv0lv3/received_events","type":"User","site_admin":false},{"login":"dionew1","id":22304676,"node_id":"MDQ6VXNlcjIyMzA0Njc2","avatar_url":"https://avatars1.githubusercontent.com/u/22304676?v=4","gravatar_id":"","url":"https://api.github.com/users/dionew1","html_url":"https://github.com/dionew1","followers_url":"https://api.github.com/users/dionew1/followers","following_url":"https://api.github.com/users/dionew1/following{/other_user}","gists_url":"https://api.github.com/users/dionew1/gists{/gist_id}","starred_url":"https://api.github.com/users/dionew1/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dionew1/subscriptions","organizations_url":"https://api.github.com/users/dionew1/orgs","repos_url":"https://api.github.com/users/dionew1/repos","events_url":"https://api.github.com/users/dionew1/events{/privacy}","received_events_url":"https://api.github.com/users/dionew1/received_events","type":"User","site_admin":false},{"login":"nkeller1","id":48798596,"node_id":"MDQ6VXNlcjQ4Nzk4NTk2","avatar_url":"https://avatars2.githubusercontent.com/u/48798596?v=4","gravatar_id":"","url":"https://api.github.com/users/nkeller1","html_url":"https://github.com/nkeller1","followers_url":"https://api.github.com/users/nkeller1/followers","following_url":"https://api.github.com/users/nkeller1/following{/other_user}","gists_url":"https://api.github.com/users/nkeller1/gists{/gist_id}","starred_url":"https://api.github.com/users/nkeller1/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/nkeller1/subscriptions","organizations_url":"https://api.github.com/users/nkeller1/orgs","repos_url":"https://api.github.com/users/nkeller1/repos","events_url":"https://api.github.com/users/nkeller1/events{/privacy}","received_events_url":"https://api.github.com/users/nkeller1/received_events","type":"User","site_admin":false},{"login":"rcallen89","id":56602822,"node_id":"MDQ6VXNlcjU2NjAyODIy","avatar_url":"https://avatars1.githubusercontent.com/u/56602822?v=4","gravatar_id":"","url":"https://api.github.com/users/rcallen89","html_url":"https://github.com/rcallen89","followers_url":"https://api.github.com/users/rcallen89/followers","following_url":"https://api.github.com/users/rcallen89/following{/other_user}","gists_url":"https://api.github.com/users/rcallen89/gists{/gist_id}","starred_url":"https://api.github.com/users/rcallen89/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/rcallen89/subscriptions","organizations_url":"https://api.github.com/users/rcallen89/orgs","repos_url":"https://api.github.com/users/rcallen89/repos","events_url":"https://api.github.com/users/rcallen89/events{/privacy}","received_events_url":"https://api.github.com/users/rcallen89/received_events","type":"User","site_admin":false}]'
     http_version: null
   recorded_at: Thu, 26 Mar 2020 17:32:29 GMT
+- request:
+    method: get
+    uri: https://chromedriver.storage.googleapis.com/LATEST_RELEASE_80.0.3987
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - chromedriver.storage.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Guploader-Uploadid:
+      - AEnB2UqfAeJD4PS58yPFg1ATgGbpQG2W-9zvE4GROavpRRbRyc3OPDiJF4FRdNW1OFRUe6B0qbCP6k0dIvobAVxS3_qem938wg
+      Expires:
+      - Fri, 27 Mar 2020 15:41:31 GMT
+      Date:
+      - Fri, 27 Mar 2020 14:41:31 GMT
+      Last-Modified:
+      - Thu, 13 Feb 2020 19:33:45 GMT
+      Etag:
+      - '"492ef7f4a53ab59e654c8ed8f7fb63ca"'
+      X-Goog-Generation:
+      - '1581622425572055'
+      X-Goog-Metageneration:
+      - '1'
+      X-Goog-Stored-Content-Encoding:
+      - identity
+      X-Goog-Stored-Content-Length:
+      - '13'
+      Content-Type:
+      - text/plain
+      Content-Language:
+      - en
+      X-Goog-Hash:
+      - crc32c=wvNAZQ==
+      - md5=SS739KU6tZ5lTI7Y9/tjyg==
+      X-Goog-Storage-Class:
+      - STANDARD
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '13'
+      Server:
+      - UploadServer
+      Cache-Control:
+      - public, max-age=3600
+      Age:
+      - '1174'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
+        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000,h3-T050=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: 80.0.3987.106
+    http_version: null
+  recorded_at: Fri, 27 Mar 2020 15:01:05 GMT
 recorded_with: VCR 5.1.0

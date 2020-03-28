@@ -16,6 +16,8 @@ feature "An admin can delete a tutorial" do
     end
 
     expect(page).to have_css('.admin-tutorial-card', count: 1)
+    expect(current_path).to eq("/admin/dashboard")
+    expect(page).to have_content("Tutorial Deleted.")
   end
 
   scenario "and its videos no longer exist" do

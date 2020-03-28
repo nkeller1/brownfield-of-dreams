@@ -23,7 +23,7 @@ feature "An admin can delete a tutorial" do
     tutorial = create(:tutorial)
 
     video = create(:video, tutorial: tutorial )
-    # require "pry"; binding.pry
+
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     visit "/admin/dashboard"

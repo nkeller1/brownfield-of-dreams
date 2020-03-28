@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :tutorials, only:[:show, :index]
+      resources :tutorials, only:[:show, :index, :destroy]
       resources :videos, only:[:show]
     end
   end

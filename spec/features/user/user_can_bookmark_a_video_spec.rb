@@ -34,14 +34,13 @@ describe 'A registered user' do
 
   it 'cannot add bookmark if unregistered' do
     tutorial = create(:tutorial)
-
-    video = create(:video, tutorial: tutorial)
+    video = create(:video, tutorial_id: tutorial.id)
 
     visit tutorial_path(tutorial)
+    save_and_open_page
 
-    click_on 'Bookmark'
+    expect { click_on 'Bookmark' }.to change { UserVideo.count }.by(0)
 
-    expect(current_path).to eq("/tutorials/#{tutorial.id}")
     expect(page).to have_content('User must login to bookmark videos.')
   end
 end

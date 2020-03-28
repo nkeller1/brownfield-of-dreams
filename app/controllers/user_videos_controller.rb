@@ -3,15 +3,21 @@ class UserVideosController < ApplicationController
   end
 
   def create
-    require 'pry'; binding.pry
-    user_video = UserVideo.new(user_video_params)
-    if current_user.user_videos.find_by(video_id: user_video.video_id)
-      flash[:error] = "Already in your bookmarks"
-    elsif user_video.save
-      flash[:success] = "Bookmark added to your dashboard!"
-    end
+    if current_user.nil?
+      flash[:notice] = 'User must login to bookmark videos.'
+      redirect_to login_path
+    else
+      user_video = UserVideo.new(user_video_params)
+      user_video.user_id = current_user.id
 
-    redirect_back(fallback_location: root_path)
+      if current_user.user_videos.find_by(video_id: user_video.video_id)
+        flash[:error] = "Already in your bookmarks"
+      elsif user_video.save
+        flash[:success] = "Bookmark added to your dashboard!"
+      end
+  
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private

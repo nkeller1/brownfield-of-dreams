@@ -26,7 +26,7 @@ class UserVideosController < ApplicationController
   def verify_user
     if current_user.nil?
       flash[:notice] = 'User must login to bookmark videos.'
-      redirect_back(fallback_location: root_path)
+      redirect_to login_path
     end
   end
 end

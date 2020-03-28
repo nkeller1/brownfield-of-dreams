@@ -32,7 +32,6 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def destroy
-    require "pry"; binding.pry
     Tutorial.destroy(params[:id])
     flash[:success] = "Tutorial Deleted."
 

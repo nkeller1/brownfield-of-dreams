@@ -3,6 +3,7 @@ class UserVideosController < ApplicationController
   end
 
   def create
+    require 'pry'; binding.pry
     user_video = UserVideo.new(user_video_params)
     if current_user.user_videos.find_by(video_id: user_video.video_id)
       flash[:error] = "Already in your bookmarks"

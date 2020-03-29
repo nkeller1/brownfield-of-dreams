@@ -1,7 +1,8 @@
 class OauthController < ApplicationController
   def create
-    current_user.update(token: request.env['omniauth.auth']['credentials']['token'])
+    token = request.env['omniauth.auth']['credentials']['token']
+    current_user.update(token: token)
 
-    redirect_to dashboard_path, notice: "Connected to Github!"
+    redirect_to dashboard_path, notice: 'Connected to Github!'
   end
 end

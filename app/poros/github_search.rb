@@ -10,17 +10,17 @@ class GithubSearch
   end
 
   def repos
-    response = conn("repos")
+    response = conn('repos')
     JSON.parse(response.body, symbolize_names: true)
   end
 
   def followers
-    response = conn("followers")
+    response = conn('followers')
     JSON.parse(response.body, symbolize_names: true)
   end
 
   def following
-    response = conn("following")
+    response = conn('following')
     JSON.parse(response.body, symbolize_names: true)
   end
 end

@@ -26,8 +26,8 @@ RSpec.describe 'User dashboard' do
     @user_3 = create(:user)
   end
 
-  vcr_options = { :record => :new_episodes}
-  it 'can see a repos section with listed repos', :js, :vcr => vcr_options do
+  vcr_options = { record: :new_episodes }
+  it 'can see a repos section with listed repos', :js, vcr: vcr_options do
     visit '/'
 
     click_on 'Sign In'
@@ -50,7 +50,7 @@ RSpec.describe 'User dashboard' do
     end
   end
 
-  it 'it sees different repos for different users', :js, :vcr => vcr_options do
+  it 'it sees different repos for different users', :js, vcr: vcr_options do
     visit '/'
 
     click_on 'Sign In'
@@ -83,14 +83,13 @@ RSpec.describe 'User dashboard' do
 
     expect(current_path).to eq(dashboard_path)
 
-
     expect(page).to_not have_content('Github')
     expect(page).to_not have_content('Repositories')
     expect(page).to_not have_content('Followers')
     expect(page).to_not have_content('Following')
   end
 
-  it 'can see a repos section with github followers', :js, :vcr => vcr_options do
+  it 'can see a repos section with github followers', :js, vcr: vcr_options do
     visit '/'
 
     click_on 'Sign In'
@@ -112,7 +111,7 @@ RSpec.describe 'User dashboard' do
     end
   end
 
-  it 'can see a followers section with a different user', :js, :vcr => vcr_options do
+  it 'can see a followers section with a different user', :js, vcr: vcr_options do
     visit '/'
 
     click_on 'Sign In'
@@ -133,8 +132,7 @@ RSpec.describe 'User dashboard' do
     end
   end
 
-
-  it 'can see a section for github following', :js, :vcr => vcr_options do
+  it 'can see a section for github following', :js, vcr: vcr_options do
     visit '/'
 
     click_on 'Sign In'
@@ -158,7 +156,7 @@ RSpec.describe 'User dashboard' do
     end
   end
 
-  it 'can see a following section with a different user', :js, :vcr => vcr_options do
+  it 'can see a following section with a different user', :js, vcr: vcr_options do
     visit '/'
 
     click_on 'Sign In'
@@ -180,8 +178,7 @@ RSpec.describe 'User dashboard' do
     end
   end
 
-  it "oauth, connecting to github", :js, :vcr => vcr_options do
-
+  it 'oauth, connecting to github', :js, vcr: vcr_options do
     visit '/'
 
     click_on 'Sign In'
@@ -193,23 +190,22 @@ RSpec.describe 'User dashboard' do
 
     click_on 'Log In'
 
-    expect(page).not_to have_content("Github")
+    expect(page).not_to have_content('Github')
 
     OmniAuth.config.test_mode = true
 
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-    :provider => 'github',
-    :uid => '123545',
-    :credentials => {:token => ENV['GH_NATHAN_TOKEN'] }
-    })
+                                                                  provider: 'github',
+                                                                  uid: '123545',
+                                                                  credentials: { token: ENV['GH_NATHAN_TOKEN'] }
+                                                                })
 
-    click_button "Connect to Github"
+    click_button 'Connect to Github'
 
-    expect(page).to have_content("Github")
+    expect(page).to have_content('Github')
   end
 
-  it "see that the account is awaiting email confirmation before e mail confirmation", :js, :vcr => vcr_options do
-
+  it 'see that the account is awaiting email confirmation before e mail confirmation', :js, vcr: vcr_options do
     user = create(:user, email_confirmed: false)
 
     visit '/'
@@ -222,11 +218,10 @@ RSpec.describe 'User dashboard' do
     click_on 'Log In'
 
     expect(user.email_confirmed).to eq(false)
-    expect(page).to have_content("Status: Awaiting E-mail confirmation")
+    expect(page).to have_content('Status: Awaiting E-mail confirmation')
   end
 
-  it "see that the account is active after a user has confirmed thier e mail", :js, :vcr => vcr_options do
-
+  it 'see that the account is active after a user has confirmed thier e mail', :js, vcr: vcr_options do
     user = create(:user, email_confirmed: true)
 
     visit '/'
@@ -239,6 +234,6 @@ RSpec.describe 'User dashboard' do
     click_on 'Log In'
 
     expect(user.email_confirmed).to eq(true)
-    expect(page).to have_content("Status: Active")
+    expect(page).to have_content('Status: Active')
   end
 end

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  def show
-  end
+  def show; end
 
   def new
     @user = User.new
@@ -22,7 +21,7 @@ class UsersController < ApplicationController
       redirect_to dashboard_path
     else
       flash[:error] = 'Username already exists'
-      redirect_to "/register"
+      redirect_to '/register'
     end
   end
 

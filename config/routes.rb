@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   get '/:token/confirm_email/', to: 'users#confirm_email', as: 'confirm_email'
 
+  post '/invite', to: 'invites#create'
+  get '/invite', to: 'invites#new'
+
   namespace :admin do
     get '/dashboard', to: 'dashboard#show'
     resources :tutorials, only: %i[create edit update destroy new show] do

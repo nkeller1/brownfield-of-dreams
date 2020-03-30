@@ -5,6 +5,7 @@
       <% else %>
         <h4> Status: Awaiting E-mail confirmation </h4>
       <% end %>
+  <%= link_to  "Send an Invite", '/invite' %>
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
   <h3>Account Details</h3>
   <ul>
@@ -36,11 +37,10 @@
   <section id='following'>
     <h3> Following </h3>
     <% current_user.gh_following.each do |member| %>
-      <%= link_to member.login, member.html_url %> <br>
+      <%= link_to member.login, member.html_url %><br>
     <% end %>
   </section>
 <% end %>
-
 
 <section>
   <h1>Bookmarked Segments</h1>

@@ -256,10 +256,10 @@ RSpec.describe 'User dashboard' do
     OmniAuth.config.test_mode = true
 
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-      provider: 'github',
-      uid: '123545',
-      credentials: { token: ENV['GH_STEVE_TOKEN'] }
-    })
+                                                                  provider: 'github',
+                                                                  uid: '123545',
+                                                                  credentials: { token: ENV['GH_STEVE_TOKEN'] }
+                                                                })
 
     click_button 'Connect to Github'
 
@@ -293,10 +293,10 @@ RSpec.describe 'User dashboard' do
     OmniAuth.config.test_mode = true
 
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-      provider: 'github',
-      uid: '123545',
-      credentials: { token: ENV['GH_NATHAN_TOKEN'] }
-    })
+                                                                  provider: 'github',
+                                                                  uid: '123545',
+                                                                  credentials: { token: ENV['GH_NATHAN_TOKEN'] }
+                                                                })
 
     click_button 'Connect to Github'
 

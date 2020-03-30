@@ -1,13 +1,12 @@
 class InvitesController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     handle = params[:github_handle]
     token = current_user.token
 
     new_invite = InviteSearch.new(handle, token)
-    
+
     email = new_invite.invitee_email
     name = new_invite.invitee_name
     inviter = current_user.username

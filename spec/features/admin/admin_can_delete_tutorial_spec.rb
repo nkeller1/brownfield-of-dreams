@@ -12,7 +12,7 @@ feature 'An admin can delete a tutorial' do
     expect(page).to have_css('.admin-tutorial-card', count: 2)
 
     within(first('.admin-tutorial-card')) do
-      click_link 'Delete'
+      click_button 'Delete'
     end
 
     expect(page).to have_css('.admin-tutorial-card', count: 1)
@@ -33,7 +33,7 @@ feature 'An admin can delete a tutorial' do
     expect(page).to have_css('.admin-tutorial-card', count: 1)
 
     within(first('.admin-tutorial-card')) do
-      expect { click_link 'Delete' }.to change { Video.count }.by(-1)
+      expect { click_button 'Delete' }.to change { Video.count }.by(-1)
     end
 
     expect { Video.find(video.id) }.to raise_exception(ActiveRecord::RecordNotFound)

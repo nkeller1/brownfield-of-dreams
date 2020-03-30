@@ -11,7 +11,8 @@ RSpec.describe 'User dashboard' do
       password: 'pass_1',
       token: Figaro.env.gh_steve_token,
       username: 'alerrian',
-      role: :default
+      role: :default,
+      email_confirmed: true
     )
     @user_2 = User.create(
       email: 'keller.nathan@gmail.com',
@@ -20,7 +21,8 @@ RSpec.describe 'User dashboard' do
       password: 'pass_1',
       token: Figaro.env.gh_nathan_token,
       username: 'nkeller1',
-      role: :default
+      role: :default,
+      email_confirmed: true
     )
 
     @user_3 = create(:user)
@@ -244,6 +246,43 @@ RSpec.describe 'User dashboard' do
 
     expect(current_path).to eq(login_path)
 
+    fill_in 'session[email]', with: @user_1.email
+    fill_in 'session[password]', with: @user_1.password
+
+    click_on 'Log In'
+
+    expect(current_path).to eq(dashboard_path)
+
+    OmniAuth.config.test_mode = true
+
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+      provider: 'github',
+      uid: '123545',
+      credentials: { token: ENV['GH_STEVE_TOKEN'] }
+    })
+
+    click_button 'Connect to Github'
+
+    click_link 'Send an Invite'
+
+    expect(current_path).to eq('/invite')
+
+    fill_in :github_handle, with: 'nkeller1'
+
+    click_on 'Send Invite'
+
+    expect(current_path).to eq(dashboard_path)
+
+    expect(page).to have_content('Successfully sent invite!')
+  end
+
+  it 'gets an error message when there is no email', :js, vcr: vcr_options do
+    visit '/'
+
+    click_on 'Sign In'
+
+    expect(current_path).to eq(login_path)
+
     fill_in 'session[email]', with: @user_2.email
     fill_in 'session[password]', with: @user_2.password
 
@@ -251,16 +290,26 @@ RSpec.describe 'User dashboard' do
 
     expect(current_path).to eq(dashboard_path)
 
-    click_on 'Send an Invite'
+    OmniAuth.config.test_mode = true
 
-    expect(current_path).to eq(invite_path)
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+      provider: 'github',
+      uid: '123545',
+      credentials: { token: ENV['GH_NATHAN_TOKEN'] }
+    })
 
-    fill_in 'Github Handle', with: 'alerrian'
+    click_button 'Connect to Github'
+
+    click_link 'Send an Invite'
+
+    expect(current_path).to eq('/invite')
+
+    fill_in :github_handle, with: 'alerrian'
 
     click_on 'Send Invite'
 
     expect(current_path).to eq(dashboard_path)
 
-    expect(page).to have_content('Successfully sent invite!')
+    expect(page).to have_content("The Github user you selected doesn't have an email address associated with their account.")
   end
 end

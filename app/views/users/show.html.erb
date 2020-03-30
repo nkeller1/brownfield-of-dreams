@@ -36,11 +36,10 @@
   <section id='following'>
     <h3> Following </h3>
     <% current_user.gh_following.each do |member| %>
-      <%= link_to member.login, member.html_url %> <br>
+      <%= link_to member.login, member.html_url %><br>
     <% end %>
   </section>
 <% end %>
-
 
 <section>
   <h1>Bookmarked Segments</h1>

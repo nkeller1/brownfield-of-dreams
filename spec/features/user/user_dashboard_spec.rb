@@ -236,4 +236,31 @@ RSpec.describe 'User dashboard' do
     expect(user.email_confirmed).to eq(true)
     expect(page).to have_content('Status: Active')
   end
+
+  it 'can send an email invite via github', :js, vcr: vcr_options do
+    visit '/'
+
+    click_on 'Sign In'
+
+    expect(current_path).to eq(login_path)
+
+    fill_in 'session[email]', with: @user_2.email
+    fill_in 'session[password]', with: @user_2.password
+
+    click_on 'Log In'
+
+    expect(current_path).to eq(dashboard_path)
+
+    click_on 'Send an Invite'
+
+    expect(current_path).to eq(invite_path)
+
+    fill_in 'Github Handle', with: 'alerrian'
+
+    click_on 'Send Invite'
+
+    expect(current_path).to eq(dashboard_path)
+
+    expect(page).to have_content('Successfully sent invite!')
+  end
 end

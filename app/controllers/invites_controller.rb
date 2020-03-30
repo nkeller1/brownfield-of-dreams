@@ -3,11 +3,13 @@ class InvitesController < ApplicationController
   end
 
   def create
-    response = Faraday.get("https://api.github.com/users/#{params['github_handle']}?access_token=#{current_user.token}")
-    user_json = JSON.parse(response.body, symbolize_names: true)
+    handle = params[:github_handle]
+    token = current_user.token
+
+    new_invite = InviteSearch.new(handle, token)
     
-    email = user_json[:email]
-    name = user_json[:name]
+    email = new_invite.invitee_email
+    name = new_invite.invitee_name
     inviter = current_user.username
 
     if email.nil?

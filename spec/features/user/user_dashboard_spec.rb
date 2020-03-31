@@ -344,4 +344,35 @@ RSpec.describe 'User dashboard' do
       expect(page).to have_content(video_3.title)
     end
   end
+
+  it "can create a new frienship", :js, vcr: vcr_options do
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user_1)
+
+    visit '/dashboard'
+    
+    within "#follower-#{'nkeller1'}" do
+      click_on 'Add Friend'
+      expect(page).not_to have_button('Add Friend')
+    end
+
+    expect(page).to have_content("Friend added sucessfully!")
+    expect(current_path).to eq('/dashboard')
+  end
+
+  # xit "can remove a frienship", :js, vcr: vcr_options do
+  #
+  #   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user_1)
+  #
+  #   visit '/dashboard'
+  #
+  #   within '#follower' do
+  #     click_on 'Add Friend'
+  #     click_on "Remove Friend"
+  #     expect(page).to have_button('Add Friend')
+  #     expect(page).not_to have_button('Remove Friend')
+  #   end
+  #
+  #   expect(page).to have_content("Friend Removed sucessfully.")
+  # end
 end

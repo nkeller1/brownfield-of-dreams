@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20_200_327_163_922) do
     t.string 'first_name'
     t.string 'last_name'
     t.string 'password_digest'
-    t.string 'uid'
     t.string 'token'
     t.string 'provider'
     t.string 'username'

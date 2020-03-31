@@ -41,4 +41,16 @@ class User < ApplicationRecord
       self.confirm_token = SecureRandom.urlsafe_base64.to_s
     end
   end
+
+  def get_bookmarks
+    videos = Video.joins(:user_videos)
+                  .where("user_videos.user_id = #{self.id}")
+                  .order(:tutorial_id)
+                  .order(:position)
+
+    videos.inject(Hash.new([])) do |bookmarks, video|
+      (bookmarks[video.tutorial_id] = []).push(video)
+      bookmarks
+    end
+  end
 end

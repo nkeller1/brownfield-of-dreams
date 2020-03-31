@@ -49,7 +49,7 @@ class User < ApplicationRecord
                   .order(:position)
 
     videos.inject(Hash.new([])) do |bookmarks, video|
-      (bookmarks[video.tutorial_id] += []).push(video)
+      (bookmarks[video.tutorial_id] = []).push(video)
       bookmarks
     end
   end

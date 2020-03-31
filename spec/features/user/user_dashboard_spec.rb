@@ -314,11 +314,6 @@ RSpec.describe 'User dashboard' do
   end
 
   it 'can see all bookmarked segments on dashboard' do
-    # As a logged in user
-    # When I visit '/dashboard'
-    # Then I should see a list of all bookmarked segments under the Bookmarked Segments section
-    # And they should be organized by which tutorial they are a part of
-    # And the videos should be ordered by their position
     tutorial_1 = create(:tutorial)
     tutorial_2 = create(:tutorial)
     video_1 = create(:video, tutorial: tutorial_1, position: 1)

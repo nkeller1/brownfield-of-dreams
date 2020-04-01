@@ -70,5 +70,4 @@ class User < ApplicationRecord
   def self.is_user?(follower_login)
     User.find_by(username: follower_login)
   end
-
 end

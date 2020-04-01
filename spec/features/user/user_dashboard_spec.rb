@@ -346,7 +346,7 @@ RSpec.describe 'User dashboard' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user_1)
 
     visit '/dashboard'
-    
+
     within "#follower-#{'nkeller1'}" do
       click_on 'Add Friend'
       expect(page).not_to have_button('Add Friend')
@@ -366,5 +366,19 @@ RSpec.describe 'User dashboard' do
     within '#bookmarked_segments' do
       expect(page).to have_content('You do not have any bookmarks!')
     end
+  end
+
+  it 'confirms e-mail' do
+    user = create(:user)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit dashboard_path
+
+    expect(page).to have_content('Awaiting E-mail confirmation')
+
+    user.validate_email
+
+    expect(user.email_confirmed).to eq(true)
   end
 end

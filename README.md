@@ -1,33 +1,63 @@
-# Brownfield Of Dreams
 
-This is the base repo for a brownfield project used at Turing for Backend Mod 3.
+<br />
+<p align="center">
+  <a href="https://github.com/nkeller1/brownfield-of-dreams">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-Project Spec and Evaluation Rubric: https://github.com/turingschool-examples/brownfield-of-dreams
+  <h3 align="center">Dirtfield of Dreams</h3>
 
-### Project Board
+  <p align="center">
+    A brownfield API consumption project.
+    <br />
+    <a href="https://github.com/nkeller1"><strong>Nathan's Profile »</strong></a>
+    <br />
 
-Students will continue to build on the existing code base using the cards within the following Github Project: https://github.com/turingschool-examples/brownfield-of-dreams/projects/1
+    <br />
+    <a href="https://github.com/alerrian"><strong>Steve's Profile »</strong></a>
+  </p>
+</p>
 
-**Learning Goals and Labels**
 
-The cards are labeled in a way that correspond to learning goals or to specific areas you might personally want to focus on.
 
-Cards should be completed from top to bottom in the To Do column. Cards labeled `good first issue` are good as filler work and will allow you to practice common Rails skills.
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-### About the Project
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+  * [Installation](#installation)
+* [Production](#production)
 
-This is a Ruby on Rails application used to organize YouTube content used for online learning. Each tutorial is a playlist of video segments. Within the application an admin is able to create tags for each tutorial in the database. A visitor or registered user can then filter tutorials based on these tags.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-A visitor is able to see all of the content on the application but in order to bookmark a segment they will need to register. Once registered a user can bookmark any of the segments in a tutorial page.
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-## Local Setup
+Here's a blank template to get started:
+**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
+`nkeller1`, `repo`, `twitter_handle`, `email`
 
-First you'll need to setup an API key with YouTube and have it defined within `ENV['YOUTUBE_API_KEY']`. There will be one failing spec if you don't have this set up.
 
-Clone down the repo
-```
-$ git clone
-```
+### Built With
+
+* [Ruby](https://ruby-doc.org/)
+* [Rails](https://guides.rubyonrails.org/)
+* [Heroku](https://devcenter.heroku.com/categories/reference)
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+
+### Installation
+
+Clone the repo
+
+https://github.com/nkeller1/brownfield-of-dreams
+
+Setup an API key with YouTube and have it defined within `ENV['YOUTUBE_API_KEY']`. You will need this shortly.
 
 Install the gem packages
 ```
@@ -48,15 +78,34 @@ $ rake db:migrate
 $ rake db:seed
 ```
 
+Set up the API keys
+```
+$ bundle exec figaro install
+This will create an application.yml file. In this file you will need to add Token's and API keys as follows:
+
+YOUTUBE_API_KEY: 'YOUR API KEY HERE'
+GH_USER1_TOKEN: 'YOUR TOKEN HERE'
+GH_USER2_TOKEN: 'YOUR PARTNERS TOKEN HERE'
+
+GITHUB_CLIENT_ID: 'YOUR APP CLIENT ID'
+GITHUB_CLIENT_SECRET: 'YOUR APP CLIENT SECRET'
+
+```
+
 Run the test suite:
 ```ruby
 $ bundle exec rspec
 ```
 
+<!-- USAGE EXAMPLES -->
+## Production
+
+Visit this project on Heroku
+
+* [Dirtfield-of-Dreams](https://dirtfield-of-dreams.herokuapp.com/)
+
 ## Technologies
 * [Stimulus](https://github.com/stimulusjs/stimulus)
-* [will_paginate](https://github.com/mislav/will_paginate)
-* [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
 * [webpacker](https://github.com/rails/webpacker)
 * [vcr](https://github.com/vcr/vcr)
 * [selenium-webdriver](https://www.seleniumhq.org/docs/03_webdriver.jsp)

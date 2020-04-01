@@ -9,7 +9,7 @@ RSpec.describe 'User dashboard' do
       first_name: 'Steve',
       last_name: 'Anderson',
       password: 'pass_1',
-      token: Figaro.env.gh_steve_token,
+      token: Figaro.env.gh_user2_token,
       username: 'alerrian',
       role: :default,
       email_confirmed: true
@@ -19,7 +19,7 @@ RSpec.describe 'User dashboard' do
       first_name: 'Nathan',
       last_name: 'Keller',
       password: 'pass_1',
-      token: Figaro.env.gh_nathan_token,
+      token: Figaro.env.gh_user1_token,
       username: 'nkeller1',
       role: :default,
       email_confirmed: true
@@ -130,7 +130,6 @@ RSpec.describe 'User dashboard' do
     within '#followers' do
       expect(page).to have_content('Followers')
       expect(page).to have_link('PaulDebevec')
-      expect(page).to have_link('alerrian')
     end
   end
 
@@ -195,7 +194,7 @@ RSpec.describe 'User dashboard' do
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
                                                                   provider: 'github',
                                                                   uid: '123545',
-                                                                  credentials: { token: ENV['GH_NATHAN_TOKEN'] }
+                                                                  credentials: { token: ENV['GH_USER1_TOKEN'] }
                                                                 })
 
     click_button 'Connect to Github'
@@ -254,7 +253,7 @@ RSpec.describe 'User dashboard' do
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
                                                                   provider: 'github',
                                                                   uid: '123545',
-                                                                  credentials: { token: ENV['GH_STEVE_TOKEN'] }
+                                                                  credentials: { token: ENV['GH_USER2_TOKEN'] }
                                                                 })
 
     click_button 'Connect to Github'
@@ -291,7 +290,7 @@ RSpec.describe 'User dashboard' do
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
                                                                   provider: 'github',
                                                                   uid: '123545',
-                                                                  credentials: { token: ENV['GH_NATHAN_TOKEN'] }
+                                                                  credentials: { token: ENV['GH_USER1_TOKEN'] }
                                                                 })
 
     click_button 'Connect to Github'

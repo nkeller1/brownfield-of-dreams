@@ -68,20 +68,20 @@ ActiveRecord::Schema.define(version: 2020_03_31_143807) do
     t.index ["video_id"], name: "index_user_videos_on_video_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'email'
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'password_digest'
-    t.string 'token'
-    t.string 'provider'
-    t.string 'username'
-    t.integer 'role', default: 0
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.boolean 'email_confirmed', default: false
-    t.string 'confirm_token'
-    t.index ['email'], name: 'index_users_on_email'
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "password_digest"
+    t.string "token"
+    t.string "provider"
+    t.string "username"
+    t.integer "role", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "email_confirmed", default: false
+    t.string "confirm_token"
+    t.index ["email"], name: "index_users_on_email"
   end
 
   create_table "videos", force: :cascade do |t|

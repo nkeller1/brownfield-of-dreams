@@ -19,13 +19,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Thu, 26 Mar 2020 02:47:13 GMT
+      - Wed, 01 Apr 2020 21:31:59 GMT
       Date:
-      - Thu, 26 Mar 2020 02:47:13 GMT
+      - Wed, 01 Apr 2020 21:31:59 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/xBzmwvS87TfOV1IETX9xGWZN7dY"'
+      - '"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/oNjUSL5c8Ln3RmCYUsde702AQtg"'
       Vary:
       - Origin
       - X-Origin
@@ -52,7 +52,7 @@ http_interactions:
       string: |
         {
          "kind": "youtube#videoListResponse",
-         "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/xBzmwvS87TfOV1IETX9xGWZN7dY\"",
+         "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/oNjUSL5c8Ln3RmCYUsde702AQtg\"",
          "pageInfo": {
           "totalResults": 1,
           "resultsPerPage": 1
@@ -60,7 +60,7 @@ http_interactions:
          "items": [
           {
            "kind": "youtube#video",
-           "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/2XwE-yDz8-kkqdotxkh9ulQPPVs\"",
+           "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/xMK1rGay--P5UNpRVrtfT8Ps8wU\"",
            "id": "J7ikFUlkP_k",
            "snippet": {
             "publishedAt": "2018-07-23T20:59:59.000Z",
@@ -111,7 +111,7 @@ http_interactions:
             "projection": "rectangular"
            },
            "statistics": {
-            "viewCount": "262",
+            "viewCount": "268",
             "likeCount": "2",
             "dislikeCount": "0",
             "favoriteCount": "0",
@@ -121,71 +121,5 @@ http_interactions:
          ]
         }
     http_version: null
-  recorded_at: Thu, 26 Mar 2020 02:47:13 GMT
-- request:
-    method: get
-    uri: https://chromedriver.storage.googleapis.com/LATEST_RELEASE_80.0.3987
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - chromedriver.storage.googleapis.com
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Guploader-Uploadid:
-      - AEnB2Ur0YEHJq67fFWItC8PFWjeWZxt2GGRXsWA0mIgvzifbe9ZVLNQ78tyV8eFwfQ9QXYjZPlsd4NXTNJTVJjraED3Hdl9pcQ
-      Expires:
-      - Thu, 26 Mar 2020 04:01:15 GMT
-      Date:
-      - Thu, 26 Mar 2020 03:01:15 GMT
-      Last-Modified:
-      - Thu, 13 Feb 2020 19:33:45 GMT
-      Etag:
-      - '"492ef7f4a53ab59e654c8ed8f7fb63ca"'
-      X-Goog-Generation:
-      - '1581622425572055'
-      X-Goog-Metageneration:
-      - '1'
-      X-Goog-Stored-Content-Encoding:
-      - identity
-      X-Goog-Stored-Content-Length:
-      - '13'
-      Content-Type:
-      - text/plain
-      Content-Language:
-      - en
-      X-Goog-Hash:
-      - crc32c=wvNAZQ==
-      - md5=SS739KU6tZ5lTI7Y9/tjyg==
-      X-Goog-Storage-Class:
-      - STANDARD
-      Accept-Ranges:
-      - bytes
-      Content-Length:
-      - '13'
-      Server:
-      - UploadServer
-      Cache-Control:
-      - public, max-age=3600
-      Age:
-      - '3386'
-      Alt-Svc:
-      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,h3-T050=":443"; ma=2592000
-    body:
-      encoding: UTF-8
-      string: 80.0.3987.106
-    http_version: null
-  recorded_at: Thu, 26 Mar 2020 03:57:40 GMT
+  recorded_at: Wed, 01 Apr 2020 21:31:56 GMT
 recorded_with: VCR 5.1.0

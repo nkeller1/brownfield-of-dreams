@@ -65,11 +65,14 @@
 
 <section id='bookmarked_segments'>
   <h1>Bookmarked Segments</h1>
-
-  <% current_user.get_bookmarks.each do |_tutorial, video| %>
-    <h3><%= video[0].tutorial.title %></h3>
-    <% video.each do |video| %>
-      <li><%= video.title %>
+  <% if current_user.get_bookmarks.empty? %>
+    <h3>You do not have any bookmarks!</h3>
+  <% else %>
+    <% current_user.get_bookmarks.each do |_tutorial, video| %>
+      <h3><%= video[0].tutorial.title %></h3>
+      <% video.each do |video| %>
+        <li><%= video.title %>
+      <% end %>
     <% end %>
   <% end %>
 </section>

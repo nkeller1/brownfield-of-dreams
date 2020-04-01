@@ -134,7 +134,7 @@ RSpec.describe 'User dashboard' do
     end
   end
 
-  it 'can see a section for github following', :js, vcr: vcr_options do
+  it 'can see a message if there are no followers', :js, vcr: vcr_options do
     visit '/'
 
     click_on 'Sign In'
@@ -150,11 +150,7 @@ RSpec.describe 'User dashboard' do
 
     within '#following' do
       expect(page).to have_content('Following')
-      expect(page).to have_link('rcallen89')
-      expect(page).to have_link('dionew1')
-      expect(page).to have_link('nkeller1')
-      expect(page).to have_link('BrianZanti')
-      expect(page).to have_link('iEv0lv3')
+      expect(page).to have_content('You are not following anyone!')
     end
   end
 
@@ -360,19 +356,15 @@ RSpec.describe 'User dashboard' do
     expect(current_path).to eq('/dashboard')
   end
 
-  # xit "can remove a frienship", :js, vcr: vcr_options do
-  #
-  #   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user_1)
-  #
-  #   visit '/dashboard'
-  #
-  #   within '#follower' do
-  #     click_on 'Add Friend'
-  #     click_on "Remove Friend"
-  #     expect(page).to have_button('Add Friend')
-  #     expect(page).not_to have_button('Remove Friend')
-  #   end
-  #
-  #   expect(page).to have_content("Friend Removed sucessfully.")
-  # end
+  it 'can see a message if there are no bookmarks' do
+    user = create(:user, email_confirmed: true)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit dashboard_path
+
+    within '#bookmarked_segments' do
+      expect(page).to have_content('You do not have any bookmarks!')
+    end
+  end
 end

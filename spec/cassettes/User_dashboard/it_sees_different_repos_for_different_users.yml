@@ -225,4 +225,148 @@ http_interactions:
       string: '[{"login":"BrianZanti","id":8962411,"node_id":"MDQ6VXNlcjg5NjI0MTE=","avatar_url":"https://avatars1.githubusercontent.com/u/8962411?v=4","gravatar_id":"","url":"https://api.github.com/users/BrianZanti","html_url":"https://github.com/BrianZanti","followers_url":"https://api.github.com/users/BrianZanti/followers","following_url":"https://api.github.com/users/BrianZanti/following{/other_user}","gists_url":"https://api.github.com/users/BrianZanti/gists{/gist_id}","starred_url":"https://api.github.com/users/BrianZanti/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/BrianZanti/subscriptions","organizations_url":"https://api.github.com/users/BrianZanti/orgs","repos_url":"https://api.github.com/users/BrianZanti/repos","events_url":"https://api.github.com/users/BrianZanti/events{/privacy}","received_events_url":"https://api.github.com/users/BrianZanti/received_events","type":"User","site_admin":false},{"login":"PaulDebevec","id":20971079,"node_id":"MDQ6VXNlcjIwOTcxMDc5","avatar_url":"https://avatars3.githubusercontent.com/u/20971079?v=4","gravatar_id":"","url":"https://api.github.com/users/PaulDebevec","html_url":"https://github.com/PaulDebevec","followers_url":"https://api.github.com/users/PaulDebevec/followers","following_url":"https://api.github.com/users/PaulDebevec/following{/other_user}","gists_url":"https://api.github.com/users/PaulDebevec/gists{/gist_id}","starred_url":"https://api.github.com/users/PaulDebevec/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/PaulDebevec/subscriptions","organizations_url":"https://api.github.com/users/PaulDebevec/orgs","repos_url":"https://api.github.com/users/PaulDebevec/repos","events_url":"https://api.github.com/users/PaulDebevec/events{/privacy}","received_events_url":"https://api.github.com/users/PaulDebevec/received_events","type":"User","site_admin":false},{"login":"alerrian","id":21130370,"node_id":"MDQ6VXNlcjIxMTMwMzcw","avatar_url":"https://avatars1.githubusercontent.com/u/21130370?v=4","gravatar_id":"","url":"https://api.github.com/users/alerrian","html_url":"https://github.com/alerrian","followers_url":"https://api.github.com/users/alerrian/followers","following_url":"https://api.github.com/users/alerrian/following{/other_user}","gists_url":"https://api.github.com/users/alerrian/gists{/gist_id}","starred_url":"https://api.github.com/users/alerrian/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/alerrian/subscriptions","organizations_url":"https://api.github.com/users/alerrian/orgs","repos_url":"https://api.github.com/users/alerrian/repos","events_url":"https://api.github.com/users/alerrian/events{/privacy}","received_events_url":"https://api.github.com/users/alerrian/received_events","type":"User","site_admin":false}]'
     http_version: null
   recorded_at: Thu, 26 Mar 2020 17:32:30 GMT
+- request:
+    method: get
+    uri: https://api.github.com/user/following?access_token=<GH_NATHAN_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 01 Apr 2020 17:58:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Ratelimit-Reset:
+      - '1585767504'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"6bc9946dde68e46f2d39a372b5173402"
+      X-Oauth-Scopes:
+      - repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - D7B1:3A38:9AAA9:15B1A9:5E84D640
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"BrianZanti","id":8962411,"node_id":"MDQ6VXNlcjg5NjI0MTE=","avatar_url":"https://avatars1.githubusercontent.com/u/8962411?v=4","gravatar_id":"","url":"https://api.github.com/users/BrianZanti","html_url":"https://github.com/BrianZanti","followers_url":"https://api.github.com/users/BrianZanti/followers","following_url":"https://api.github.com/users/BrianZanti/following{/other_user}","gists_url":"https://api.github.com/users/BrianZanti/gists{/gist_id}","starred_url":"https://api.github.com/users/BrianZanti/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/BrianZanti/subscriptions","organizations_url":"https://api.github.com/users/BrianZanti/orgs","repos_url":"https://api.github.com/users/BrianZanti/repos","events_url":"https://api.github.com/users/BrianZanti/events{/privacy}","received_events_url":"https://api.github.com/users/BrianZanti/received_events","type":"User","site_admin":false},{"login":"PaulDebevec","id":20971079,"node_id":"MDQ6VXNlcjIwOTcxMDc5","avatar_url":"https://avatars3.githubusercontent.com/u/20971079?v=4","gravatar_id":"","url":"https://api.github.com/users/PaulDebevec","html_url":"https://github.com/PaulDebevec","followers_url":"https://api.github.com/users/PaulDebevec/followers","following_url":"https://api.github.com/users/PaulDebevec/following{/other_user}","gists_url":"https://api.github.com/users/PaulDebevec/gists{/gist_id}","starred_url":"https://api.github.com/users/PaulDebevec/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/PaulDebevec/subscriptions","organizations_url":"https://api.github.com/users/PaulDebevec/orgs","repos_url":"https://api.github.com/users/PaulDebevec/repos","events_url":"https://api.github.com/users/PaulDebevec/events{/privacy}","received_events_url":"https://api.github.com/users/PaulDebevec/received_events","type":"User","site_admin":false},{"login":"alerrian","id":21130370,"node_id":"MDQ6VXNlcjIxMTMwMzcw","avatar_url":"https://avatars1.githubusercontent.com/u/21130370?v=4","gravatar_id":"","url":"https://api.github.com/users/alerrian","html_url":"https://github.com/alerrian","followers_url":"https://api.github.com/users/alerrian/followers","following_url":"https://api.github.com/users/alerrian/following{/other_user}","gists_url":"https://api.github.com/users/alerrian/gists{/gist_id}","starred_url":"https://api.github.com/users/alerrian/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/alerrian/subscriptions","organizations_url":"https://api.github.com/users/alerrian/orgs","repos_url":"https://api.github.com/users/alerrian/repos","events_url":"https://api.github.com/users/alerrian/events{/privacy}","received_events_url":"https://api.github.com/users/alerrian/received_events","type":"User","site_admin":false}]'
+    http_version: null
+  recorded_at: Wed, 01 Apr 2020 17:58:24 GMT
+- request:
+    method: get
+    uri: https://api.github.com/user/following?access_token=<GH_NATHAN_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 01 Apr 2020 18:03:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4992'
+      X-Ratelimit-Reset:
+      - '1585767504'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"6bc9946dde68e46f2d39a372b5173402"
+      X-Oauth-Scopes:
+      - repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - DE2E:3E6A:2C331:78EDE:5E84D760
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"BrianZanti","id":8962411,"node_id":"MDQ6VXNlcjg5NjI0MTE=","avatar_url":"https://avatars1.githubusercontent.com/u/8962411?v=4","gravatar_id":"","url":"https://api.github.com/users/BrianZanti","html_url":"https://github.com/BrianZanti","followers_url":"https://api.github.com/users/BrianZanti/followers","following_url":"https://api.github.com/users/BrianZanti/following{/other_user}","gists_url":"https://api.github.com/users/BrianZanti/gists{/gist_id}","starred_url":"https://api.github.com/users/BrianZanti/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/BrianZanti/subscriptions","organizations_url":"https://api.github.com/users/BrianZanti/orgs","repos_url":"https://api.github.com/users/BrianZanti/repos","events_url":"https://api.github.com/users/BrianZanti/events{/privacy}","received_events_url":"https://api.github.com/users/BrianZanti/received_events","type":"User","site_admin":false},{"login":"PaulDebevec","id":20971079,"node_id":"MDQ6VXNlcjIwOTcxMDc5","avatar_url":"https://avatars3.githubusercontent.com/u/20971079?v=4","gravatar_id":"","url":"https://api.github.com/users/PaulDebevec","html_url":"https://github.com/PaulDebevec","followers_url":"https://api.github.com/users/PaulDebevec/followers","following_url":"https://api.github.com/users/PaulDebevec/following{/other_user}","gists_url":"https://api.github.com/users/PaulDebevec/gists{/gist_id}","starred_url":"https://api.github.com/users/PaulDebevec/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/PaulDebevec/subscriptions","organizations_url":"https://api.github.com/users/PaulDebevec/orgs","repos_url":"https://api.github.com/users/PaulDebevec/repos","events_url":"https://api.github.com/users/PaulDebevec/events{/privacy}","received_events_url":"https://api.github.com/users/PaulDebevec/received_events","type":"User","site_admin":false},{"login":"alerrian","id":21130370,"node_id":"MDQ6VXNlcjIxMTMwMzcw","avatar_url":"https://avatars1.githubusercontent.com/u/21130370?v=4","gravatar_id":"","url":"https://api.github.com/users/alerrian","html_url":"https://github.com/alerrian","followers_url":"https://api.github.com/users/alerrian/followers","following_url":"https://api.github.com/users/alerrian/following{/other_user}","gists_url":"https://api.github.com/users/alerrian/gists{/gist_id}","starred_url":"https://api.github.com/users/alerrian/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/alerrian/subscriptions","organizations_url":"https://api.github.com/users/alerrian/orgs","repos_url":"https://api.github.com/users/alerrian/repos","events_url":"https://api.github.com/users/alerrian/events{/privacy}","received_events_url":"https://api.github.com/users/alerrian/received_events","type":"User","site_admin":false}]'
+    http_version: null
+  recorded_at: Wed, 01 Apr 2020 18:03:12 GMT
 recorded_with: VCR 5.1.0

@@ -31,25 +31,30 @@
     <h3> Followers </h3>
     <% current_user.gh_followers.each do |follower| %>
       <section id="follower-<%=follower.login%>">
-      <%= link_to follower.login, follower.html_url %> <br>
-      <% if current_user.friends?(follower.login) == false && !User.is_user?(follower.login).nil? %>
-        <%= form_tag friendship_path, method: :create do %>
-          <%= hidden_field_tag :username, follower.login %>
-          <%= submit_tag 'Add Friend' %>
+        <%= link_to follower.login, follower.html_url %> <br>
+        
+        <% if current_user.friends?(follower.login) == false && !User.is_user?(follower.login).nil? %>
+          <%= form_tag friendship_path, method: :create do %>
+            <%= hidden_field_tag :username, follower.login %>
+            <%= submit_tag 'Add Friend' %>
+          <% end %>
         <% end %>
-      <% end %>
       </section>
     <% end %>
   </section>
 
   <section id='following'>
     <h3> Following </h3>
-    <% current_user.gh_following.each do |member| %>
-      <%= link_to member.login, member.html_url %><br>
-      <% if current_user.friends?(member.login) == false && !User.is_user?(member.login).nil? %>
-        <%= form_tag friendship_path, method: :create do %>
-          <%= hidden_field_tag :username, member.login %>
-          <%= submit_tag 'Add Friend' %>
+    <% if current_user.gh_following.empty? %>
+      <h3>You are not following anyone!</h3>
+    <% else %>
+      <% current_user.gh_following.each do |member| %>
+        <%= link_to member.login, member.html_url %><br>
+        <% if current_user.friends?(member.login) == false && !User.is_user?(member.login).nil? %>
+          <%= form_tag friendship_path, method: :create do %>
+            <%= hidden_field_tag :username, member.login %>
+            <%= submit_tag 'Add Friend' %>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
@@ -65,11 +70,14 @@
 
 <section id='bookmarked_segments'>
   <h1>Bookmarked Segments</h1>
-
-  <% current_user.get_bookmarks.each do |_tutorial, video| %>
-    <h3><%= video[0].tutorial.title %></h3>
-    <% video.each do |video| %>
-      <li><%= video.title %>
+  <% if current_user.get_bookmarks.empty? %>
+    <h3>You do not have any bookmarks!</h3>
+  <% else %>
+    <% current_user.get_bookmarks.each do |_tutorial, video| %>
+      <h3><%= video[0].tutorial.title %></h3>
+      <% video.each do |video| %>
+        <li><%= video.title %>
+      <% end %>
     <% end %>
   <% end %>
 </section>

@@ -1,18 +1,10 @@
-
-<br />
 <p align="center">
-  <a href="https://github.com/nkeller1/brownfield-of-dreams">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">Dirtfield of Dreams</h3>
 
   <p align="center">
     A brownfield API consumption project.
     <br />
     <a href="https://github.com/nkeller1"><strong>Nathan's Profile »</strong></a>
-    <br />
-
     <br />
     <a href="https://github.com/alerrian"><strong>Steve's Profile »</strong></a>
   </p>

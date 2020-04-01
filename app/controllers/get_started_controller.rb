@@ -1,3 +1,3 @@
-class GetStartedController < ApplicationController
-  def show; end
-end
+# class GetStartedController < ApplicationController
+#   # def show; end
+# end

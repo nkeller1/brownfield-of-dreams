@@ -1,3 +1,3 @@
-class AboutController < ApplicationController
-  def show; end
-end
+# class AboutController < ApplicationController
+#   # def show; end
+# end

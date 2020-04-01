@@ -134,7 +134,7 @@ RSpec.describe 'User dashboard' do
     end
   end
 
-  it 'can see a section for github following', :js, vcr: vcr_options do
+  it 'can see a message if there are no followers', :js, vcr: vcr_options do
     visit '/'
 
     click_on 'Sign In'
@@ -150,11 +150,7 @@ RSpec.describe 'User dashboard' do
 
     within '#following' do
       expect(page).to have_content('Following')
-      expect(page).to have_link('rcallen89')
-      expect(page).to have_link('dionew1')
-      expect(page).to have_link('nkeller1')
-      expect(page).to have_link('BrianZanti')
-      expect(page).to have_link('iEv0lv3')
+      expect(page).to have_content('You are not following anyone!')
     end
   end
 

@@ -45,7 +45,7 @@ class User < ApplicationRecord
     end
   end
 
-  def get_bookmarks
+  def find_bookmarks
     videos = Video.joins(:user_videos)
                   .where("user_videos.user_id = #{id}")
                   .order(:tutorial_id)
@@ -58,8 +58,8 @@ class User < ApplicationRecord
   end
 
   def create_friendship(friend_id)
-    user_friendship = Friendship.create(user_id: id, friend_id: friend_id)
-    friend_friendship = Friendship.create(user_id: friend_id, friend_id: id)
+    Friendship.create(user_id: id, friend_id: friend_id)
+    Friendship.create(user_id: friend_id, friend_id: id)
   end
 
   def friends?(follower_login)
@@ -67,7 +67,7 @@ class User < ApplicationRecord
     friends.include?(friend)
   end
 
-  def self.is_user?(follower_login)
+  def self.user_exists?(follower_login)
     User.find_by(username: follower_login)
   end
 end

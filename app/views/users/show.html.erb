@@ -33,7 +33,7 @@
       <section id="follower-<%=follower.login%>">
         <%= link_to follower.login, follower.html_url %> <br>
         
-        <% if current_user.friends?(follower.login) == false && !User.is_user?(follower.login).nil? %>
+        <% if current_user.friends?(follower.login) == false && !User.user_exists?(follower.login).nil? %>
           <%= form_tag friendship_path, method: :create do %>
             <%= hidden_field_tag :username, follower.login %>
             <%= submit_tag 'Add Friend' %>
@@ -50,7 +50,7 @@
     <% else %>
       <% current_user.gh_following.each do |member| %>
         <%= link_to member.login, member.html_url %><br>
-        <% if current_user.friends?(member.login) == false && !User.is_user?(member.login).nil? %>
+        <% if current_user.friends?(member.login) == false && !User.user_exists?(member.login).nil? %>
           <%= form_tag friendship_path, method: :create do %>
             <%= hidden_field_tag :username, member.login %>
             <%= submit_tag 'Add Friend' %>
@@ -70,10 +70,10 @@
 
 <section id='bookmarked_segments'>
   <h1>Bookmarked Segments</h1>
-  <% if current_user.get_bookmarks.empty? %>
+  <% if current_user.find_bookmarks.empty? %>
     <h3>You do not have any bookmarks!</h3>
   <% else %>
-    <% current_user.get_bookmarks.each do |_tutorial, video| %>
+    <% current_user.find_bookmarks.each do |_tutorial, video| %>
       <h3><%= video[0].tutorial.title %></h3>
       <% video.each do |video| %>
         <li><%= video.title %>

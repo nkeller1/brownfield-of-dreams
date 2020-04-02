@@ -8,10 +8,10 @@ RSpec.describe User, type: :model do
   end
 
   describe 'relationships' do
-    it {should have_many :user_videos}
-    it {should have_many(:videos).through(:user_videos)}
-    it {should have_many :friendships}
-    it {should have_many(:friends).through(:friendships)}
+    it { should have_many :user_videos }
+    it { should have_many(:videos).through(:user_videos) }
+    it { should have_many :friendships }
+    it { should have_many(:friends).through(:friendships) }
   end
 
   describe 'roles' do

@@ -312,9 +312,10 @@ RSpec.describe 'User dashboard' do
     tutorial_1 = create(:tutorial)
     tutorial_2 = create(:tutorial)
     video_1 = create(:video, tutorial: tutorial_1, position: 1)
-    video_2 = create(:video, tutorial: tutorial_1, position: 2)
+    create(:video, tutorial: tutorial_1, position: 2)
+    
     video_3 = create(:video, tutorial: tutorial_2, position: 1)
-    video_4 = create(:video, tutorial: tutorial_2, position: 2)
+    create(:video, tutorial: tutorial_2, position: 2)
     user = create(:user, email_confirmed: true)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
@@ -340,18 +341,17 @@ RSpec.describe 'User dashboard' do
     end
   end
 
-  it "can create a new frienship", :js, vcr: vcr_options do
-
+  it 'can create a new frienship', :js, vcr: vcr_options do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user_1)
 
     visit '/dashboard'
 
-    within "#follower-#{'nkeller1'}" do
+    within '#follower-nkeller1' do
       click_on 'Add Friend'
       expect(page).not_to have_button('Add Friend')
     end
 
-    expect(page).to have_content("Friend added sucessfully!")
+    expect(page).to have_content('Friend added sucessfully!')
     expect(current_path).to eq('/dashboard')
   end
 

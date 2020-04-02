@@ -8,8 +8,8 @@ RSpec.describe 'Admin can access API endpoints' do
 
     tutorial = create(:tutorial)
 
-    video_1 = create(:video, tutorial: tutorial)
-    video_2 = create(:video, tutorial: tutorial)
+    create(:video, tutorial: tutorial)
+    create(:video, tutorial: tutorial)
 
     put admin_api_v1_path(tutorial)
   end

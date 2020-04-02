@@ -12,7 +12,7 @@ feature 'An admin visiting the admin dashboard' do
     expect(page).to have_css('.admin-tutorial-card', count: 2)
   end
 
-  it "raises a 404 if not logged in as an admin " do
+  it 'raises a 404 if not logged in as an admin ' do
     user = create(:user)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)

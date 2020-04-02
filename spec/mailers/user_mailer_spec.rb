@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe UserMailer, type: :mailer do
   before :each do
     @user = create(:user, email: 'example@example.com', confirm_token: 'hi')

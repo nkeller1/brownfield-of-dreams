@@ -49,7 +49,7 @@ describe 'An Admin can edit a tutorial' do
     tutorial = create(:tutorial)
 
     video_1 = create(:video, tutorial: tutorial)
-    video_2 = create(:video, tutorial: tutorial)
+    create(:video, tutorial: tutorial)
 
     visit edit_admin_video_path(video_1)
   end

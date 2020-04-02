@@ -48,6 +48,6 @@ Rails.application.routes.draw do
   resources :tutorials, only: %i[show index] do
     resources :videos, only: %i[show index]
   end
-  
+
   resources :user_videos, only: %i[create destroy]
 end

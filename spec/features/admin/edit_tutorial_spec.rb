@@ -42,4 +42,15 @@ describe 'An Admin can edit a tutorial' do
 
     expect(page).to have_content('Unable to create video.')
   end
+
+  scenario 'can edit a video' do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    tutorial = create(:tutorial)
+
+    video_1 = create(:video, tutorial: tutorial)
+    video_2 = create(:video, tutorial: tutorial)
+
+    visit edit_admin_video_path(video_1)
+  end
 end

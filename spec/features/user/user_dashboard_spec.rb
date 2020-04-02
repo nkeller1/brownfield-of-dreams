@@ -313,7 +313,7 @@ RSpec.describe 'User dashboard' do
     tutorial_2 = create(:tutorial)
     video_1 = create(:video, tutorial: tutorial_1, position: 1)
     create(:video, tutorial: tutorial_1, position: 2)
-    
+
     video_3 = create(:video, tutorial: tutorial_2, position: 1)
     create(:video, tutorial: tutorial_2, position: 2)
     user = create(:user, email_confirmed: true)

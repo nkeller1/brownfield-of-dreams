@@ -58,8 +58,8 @@ class User < ApplicationRecord
   end
 
   def create_friendship(friend_id)
-    user_friendship = Friendship.create(user_id: id, friend_id: friend_id)
-    friend_friendship = Friendship.create(user_id: friend_id, friend_id: id)
+    Friendship.create(user_id: id, friend_id: friend_id)
+    Friendship.create(user_id: friend_id, friend_id: id)
   end
 
   def friends?(follower_login)
